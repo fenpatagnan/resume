@@ -1,0 +1,25 @@
+{
+  "name": "resume-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass -w assets/scss/ -o assets/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fenpatagnan/resume-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fenpatagnan/resume-demo/issues"
+  },
+  "homepage": "https://github.com/fenpatagnan/resume-demo#readme",
+  "dependencies": {
+    "node": "^14.8.0",
+    "node-sass": "^4.14.1",
+    "sass": "^1.26.10"
+  }
+}

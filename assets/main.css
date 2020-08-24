@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: "Nunito", sans-serif; }
+
+.container {
+  width: 100%; }
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+[class*="col-"] {
+  float: left;
+  padding-right: 20px; }
+  [class*="col-"]:last-of-type {
+    padding-right: 0; }
+
+.col-1 {
+  width: 8.33333%; }
+
+.col-2 {
+  width: 16.66667%; }
+
+.col-3 {
+  width: 25%; }
+
+.col-4 {
+  width: 33.33333%; }
+
+.col-5 {
+  width: 25%; }
+
+.col-6 {
+  width: 50%; }
+
+.col-12 {
+  width: 100%; }
+
+h1,
+h2,
+h3 {
+  font-weight: normal; }
+
+.profile {
+  padding: 5em;
+  padding-top: 8em; }
+  .profile__greetings {
+    width: 20%;
+    background: #fca8bc;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 33px;
+    padding: 10px; }
+  .profile__heading {
+    color: #f7ffc8;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 65px;
+    text-transform: uppercase;
+    margin-top: 1em; }
+  .profile__subheading {
+    color: #f7ffc8;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 49px; }
+  .profile__details p {
+    font-size: 20px;
+    line-height: 27px;
+    color: white;
+    margin-top: 1em; }
+    .profile__details p i {
+      color: #fca8bc;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 20px;
+      line-height: 23px;
+      margin-right: 1.5em; }
+  .profile__img {
+    max-width: 45%;
+    border: 20px rgba(250, 255, 249, 0.5) solid; }
+  .profile__description {
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 33px;
+    text-align: center;
+    color: white;
+    padding-top: 1em; }
+  .profile__right {
+    border-left: 2px solid #f7ffc8;
+    text-align: center;
+    padding-left: 5em; }
+  .profile__social-icons i {
+    line-height: 41px;
+    font-size: 30px !important; }
+
+.work__heading {
+  color: #338fb6;
+  font-size: 40px;
+  font-weight: 600;
+  padding-top: 2em;
+  padding-bottom: 2em; }
+
+.work__items {
+  height: 500px;
+  margin: 0.5em 3em;
+  padding: 20px 25px;
+  border-top: 10px solid #f8719a;
+  border-bottom: 10px solid #f8719a;
+  box-shadow: 0px 5px 10px #d4cdcd; }
+  .work__items ul {
+    margin-left: 1em;
+    color: #7b7474; }
+
+.work__title {
+  font-size: 30px;
+  line-height: 40px;
+  color: #797171;
+  font-weight: bold; }
+
+.work__company, .work__yr {
+  font-size: 20px; }
+
+.work__description {
+  margin-top: 50px; }
+
+.img--round {
+  border-radius: 100%; }
+
+.text-align--center {
+  text-align: center; }
+
+.push-left {
+  margin-left: 2.5em; }
+
+.border-right--white {
+  border-right: 2px solid #fffffd; }
+
+.border-left--white {
+  border-left: 2px solid #fffffd; }
+
+.bg-gradient--blue {
+  background: linear-gradient(96.83deg, #338fb6 62.35%, rgba(72, 151, 185, 0.702563) 93.89%, rgba(72, 151, 185, 0.511005) 103.99%, rgba(72, 151, 185, 0) 132.66%); }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  [class*="col-"] {
+    padding-right: 0; }
+  .col-6 {
+    width: 100%; } }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* Medium devices (landscape tablets, 768px and up) */
+/* Large devices (laptops/desktops, 992px and up) */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
