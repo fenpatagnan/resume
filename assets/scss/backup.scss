@@ -1,6 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
-@import 'variables';
-@import 'functions';
 * {
     margin: 0;
     padding: 0;
@@ -20,6 +18,11 @@ body {
     content: "";
     display: table;
     clear: both;
+}
+
+@function colWidth($col) {
+    $colWidth: 100% / $col;
+    @return $colWidth;
 }
 
 [class*="col-"] {
@@ -55,23 +58,22 @@ body {
 }
 
 //Typography
+$yellow: #f7ffc8;
+$white: #fffffd;
+$pink: #fca8bc;
+$dark-pink: #f8719a;
+$blue: #338fb6;
+$light-blue: #acd2de;
+$dark-gray: #797171;
+$light-gray: #7b7474;
+$text-heading: 40px;
+$text-subheading: 30px;
+$text-profDesc: 20px;
 h1,
 h2,
-h3,
-h4 {
+h3 {
     font-weight: normal;
 }
-
-a {
-    color: $white;
-    &:hover {
-        transition: color 1.5s !important;
-        color: $yellow !important;
-    }
-}
-
-
-/* Content Styling */
 
 .profile {
     padding: 5em;
@@ -80,11 +82,11 @@ a {
         width: 20%;
         background: $pink;
         color: white;
-        border-radius: 15px;
+        border-radius: 10px;
         font-weight: bold;
         font-size: 20px;
         line-height: 33px;
-        padding: .5em 1.25em;
+        padding: 10px;
     }
     &__heading {
         color: $yellow;
@@ -103,7 +105,7 @@ a {
     &__details p {
         font-size: $text-profDesc;
         line-height: 27px;
-        color: $white;
+        color: white;
         margin-top: 1em;
         & i {
             color: $pink;
@@ -126,17 +128,8 @@ a {
         color: white;
         padding-top: 1em;
     }
-    &__left:after {
-        content: "";
-        height: 60%;
-        width: 2px;
-        background: rgba($white, .8);
-        position: absolute;
-        top: 10%;
-        left: 50%;
-    }
     &__right {
-        //border-left: 2px solid $yellow;
+        border-left: 2px solid $yellow;
         text-align: center;
         padding-left: 5em;
     }
@@ -144,10 +137,6 @@ a {
         & i {
             line-height: 41px;
             font-size: 30px !important;
-        }
-        & a i:hover {
-            transition: color 1.5s;
-            color: $yellow;
         }
     }
 }
@@ -159,21 +148,47 @@ a {
         font-weight: 600;
         padding-top: 2em;
     }
+    &__items {
+        height: 500px;
+        margin: 0.5em 3em;
+        padding: 20px 25px;
+        border-top: 10px solid $dark-pink;
+        border-bottom: 10px solid $dark-pink;
+        box-shadow: 0px 5px 10px #d4cdcd;
+        & ul {
+            margin-left: 1em;
+            color: $light-gray;
+        }
+    }
+    &__title {
+        font-size: $text-subheading;
+        line-height: 40px;
+        color: $dark-gray;
+        font-weight: bold;
+    }
+    &__company,
+    &__yr {
+        font-size: $text-profDesc;
+    }
+    &__description {
+        margin-top: 50px;
+    }
 }
 
 
-/* Timeline */
+/* Timeline Test */
 
 .timeline {
     position: relative;
-    margin: 0 auto;
-    padding: 2em 12em;
+    margin: 50px auto;
+    padding: 40px 0;
+    width: 1000px;
     &:before {
         content: "";
         position: absolute;
         left: 50%;
         width: 5px;
-        height: 97%;
+        height: 100%;
         background: $blue;
     }
     ul {
@@ -183,21 +198,16 @@ a {
             list-style: none;
             position: relative;
             width: 50%;
-            padding: 3em 2em;
+            padding: 50px 40px;
             box-sizing: border-box;
             h3 {
                 font-weight: 600;
                 color: $blue;
                 font-size: $text-heading;
             }
-            h4 {
-                color: $dark-gray;
-                font-size: $text-subheading;
-                font-weight: 600;
-            }
             p {
-                color: $black;
-                padding: 1em 0;
+                color: $dark-gray;
+                padding: 10px 0;
                 font-size: $text-profDesc;
             }
             &:nth-child(odd) {
@@ -220,7 +230,7 @@ a {
                     top: 55px;
                     right: -230px;
                     margin: 0;
-                    padding: .5em 1em;
+                    padding: 8px 16px;
                     background: $blue;
                     color: white;
                     border-radius: 20px;
@@ -247,7 +257,7 @@ a {
                     top: 50px;
                     left: -230px;
                     margin: 0;
-                    padding: .5em 1em;
+                    padding: 8px 16px;
                     background: $blue;
                     color: white;
                     border-radius: 20px;
@@ -263,104 +273,6 @@ a {
     }
     .content {
         padding-bottom: 20px;
-    }
-}
-
-.skills {
-    &__heading {
-        color: $blue;
-        font-size: $text-heading;
-        font-weight: 600;
-        padding-top: 2em;
-    }
-    .skill {
-        margin: 5em;
-        height: 750px;
-        line-height: 30px;
-        box-shadow: 0px 5px 10px #d4cdcd;
-        border-bottom: 10px solid $dark-pink;
-        &__img {
-            width: 100%;
-            height: 300px;
-            box-shadow: 0px 5px 10px #d4cdcd;
-        }
-        &__content {
-            padding: 1em .5em;
-            margin: .5em 1em;
-            height: 200px;
-            font-size: $text-profDesc;
-            color: $dark-gray;
-            ul {
-                list-style-type: none;
-                li {
-                    padding: 2px;
-                    font-weight: bold;
-                }
-                ul {
-                    margin-left: 2em;
-                    list-style-type: disc;
-                    li {
-                        padding-top: .5em;
-                        font-weight: normal;
-                    }
-                }
-            }
-        }
-        &__title {
-            font-weight: bold;
-            color: $blue;
-            font-size: $text-subheading;
-        }
-        &__desc {
-            font-size: $text-profDesc;
-            margin-top: 10px;
-            color: $black;
-        }
-        &__badge {
-            padding: .5em 1em;
-            border-radius: 10px;
-            font-size: 10px;
-            text-transform: uppercase;
-            vertical-align: middle;
-            font-weight: bold;
-            color: $white;
-            box-shadow: 1px 1px 3px #ab9595;
-            margin-left: 1em;
-            &--green {
-                background: $green;
-            }
-            &--orange {
-                background: $orange;
-            }
-        }
-    }
-}
-
-.footer {
-    &__details {
-        color: $yellow;
-        margin: 6em 5em;
-        h3 {
-            font-size: $text-subheading;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-        h4 {
-            font-size: $text-profDesc;
-            margin: 1em 0;
-            color: $white;
-            a {
-                color: $white;
-            }
-        }
-    }
-    &__icons a {
-        font-size: $text-heading;
-        color: $pink;
-        margin: 1em 0;
-        &:not(:first-child) {
-            margin-left: 1em;
-        }
     }
 }
 
@@ -396,33 +308,66 @@ a {
 /* Extra small devices (phones, 600px and down) */
 
 @media only screen and (max-width: 600px) {
-    @import 'xxs-screen';
+    [class*="col-"] {
+        padding-right: 0;
+    }
+    .col {
+        &-6 {
+            width: colWidth(1);
+        }
+    }
 }
 
 
-/* Extra small devices (phones, 600px and down) */
+/* Small devices (portrait tablets and large phones, 600px and up) */
 
-@media only screen and (min-width: 600px) and (max-width: 768px) {
-    @import 'sm-screen';
-}
+@media only screen and (min-width: 600px) {}
 
 
 /* Medium devices (landscape tablets, 768px and up) */
 
-@media only screen and (min-width: 769px) and (max-width:1000px) {
-    @import 'md-screen';
-}
+@media only screen and (min-width: 768px) {}
 
 
 /* Large devices (laptops/desktops, 992px and up) */
 
-@media only screen and (min-width: 1001px) and (max-width:1600px) {
-    @import 'lg-screen';
-}
+@media only screen and (min-width: 992px) {}
 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 
-@media only screen and (min-width: 2000px) {
-    @import 'xl-screen';
+@media only screen and (min-width: 1200px) {}
+
+
+/* Card Components */
+
+.card {
+    margin: 80px;
+    height: 650px;
+    line-height: 30px;
+    box-shadow: 0px 5px 10px #d4cdcd;
+    &__img {
+        width: 100%;
+        height: 300px;
+        box-shadow: 0px 5px 10px #d4cdcd;
+    }
+    &__content {
+        padding: 30px 20px;
+        margin: 5px 10px;
+        height: 200px;
+    }
+    &__title {
+        font-weight: bold;
+        color: $blue;
+        font-size: $text-subheading;
+    }
+    &__desc {
+        font-size: $text-profDesc;
+        margin-top: 10px;
+        color: $light-gray;
+    }
+}
+
+footer {
+    background: $blue;
 }

@@ -1,0 +1,4 @@
+@function colWidth($col) {
+    $colWidth: 100% / $col;
+    @return $colWidth;
+}
